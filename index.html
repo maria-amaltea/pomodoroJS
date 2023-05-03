@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pomodoro Clock</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h4 id="break-label" class="text-center">Break Length</h4>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <button id="break-decrement" class="btn btn-outline-light mr-2">-</button>
+                  <span id="break-length" class="align-self-center">5</span>
+                  <button id="break-increment" class="btn btn-outline-light ml-2">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h4 id="session-label" class="text-center">Session Length</h4>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <button id="session-decrement" class="btn btn-outline-light mr-2">-</button>
+                  <span id="session-length" class="align-self-center">25</span>
+                  <button id="session-increment" class="btn btn-outline-light ml-2">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="row mt-4">
+          <div class="col-md-12">
+            <div class="card w-100">
+              <div class="card-header">
+                <h4 id="timer-label" class="text-center">Session</h4>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <div id="time-left" class="align-self-center">25:00</div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="d-flex justify-content-center">
+                  <button id="start_stop" class="btn btn-outline-light mr-2">Start/Stop</button>
+                  <button id="reset" class="btn btn-outline-light ms-2">Reset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+</body>
+</html>

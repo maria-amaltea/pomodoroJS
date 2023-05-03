@@ -1,0 +1,71 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+	background-color: var(--bs-teal);
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+
+	.row {
+		width:600px;
+	}
+}
+
+.label-container {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	width: 250px;
+}
+
+.label {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.length-container {
+	display: flex;
+	justify-content: space-between;
+	width: 250px;
+}
+
+.length {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+
+.value {
+	font-size: 24px;
+	margin-top: 10px;
+}
+
+.timer-label {
+	font-size: 32px;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+#time-left {
+	font-size: 72px;
+	margin-top: 10px;
+}
+
+.btn-container {
+	display: flex;
+	justify-content: space-between;
+	width: 250px;
+	margin-top: 20px;
+}
+
+.card {
+	
+	--bs-card-color:#ffffff !important;
+	--bs-card-bg: rgba(255, 255, 255, 0.2);
+}
