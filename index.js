@@ -45,7 +45,7 @@ sessionLengthDiv.innerHTML = sessionLength;
 
 //handle increment/decrement
 breakDecrementDiv.addEventListener("click", () => {
-  if (breakLength > 1) {
+  if (breakLength > 1 && !playing) {
     breakLength = breakLength - 1;
     breakLengthDiv.innerHTML = breakLength;
   }
@@ -53,24 +53,27 @@ breakDecrementDiv.addEventListener("click", () => {
 
 breakIncrementDiv.addEventListener("click", () => {
  
-  if (breakLength <= 60 ) {
-    console.log("it happens too")
+  if (breakLength < 60 && !playing ) {
     breakLength = breakLength + 1;
     breakLengthDiv.innerHTML = breakLength;
   }
 });
 
 sessionDecrementDiv.addEventListener("click", () => {
-  if (sessionLength > 1) {
+  if (sessionLength > 1 && !playing) {
     sessionLength = sessionLength - 1;
     sessionLengthDiv.innerHTML = sessionLength;
+    secondsLeft = sessionLength * 60;
+    timeLeftDiv.innerHTML = getTime(secondsLeft);
   }
 });
 
 sessionIncrementDiv.addEventListener("click", () => {
-  if (!sessionLength <= 60) {
+  if (sessionLength < 60 && !playing ) {
     sessionLength = sessionLength + 1;
     sessionLengthDiv.innerHTML = sessionLength;
+    secondsLeft = sessionLength * 60;
+    timeLeftDiv.innerHTML = getTime(secondsLeft);
   }
 });
 
@@ -82,7 +85,12 @@ resetDiv.addEventListener("click", () => {
     sessionLengthDiv.innerHTML = sessionLength;
     breakLength = DEFAULT_BREAK_LENGTH;
     breakLengthDiv.innerHTML = breakLength;
+    secondsLeft = 1500;
+    timeLeftDiv.innerHTML = getTime(secondsLeft);
     
+    clearInterval(intervalId);
+    alarm.pause();
+    alarm.currentTime = 0;
     timeLeftDiv.innerHTML = getTime(1500);
 
   }
@@ -93,22 +101,24 @@ startStopDiv.addEventListener("click", () => {
 
   playing = !playing;
 
-  console.log("is it playin", playing)
 
   if ( playing===true && secondsLeft > 0) {
 
     intervalId = setInterval(()=> {
       secondsLeft = secondsLeft - 1;
-      console.log("secondsLeft", secondsLeft)
+      if (secondsLeft == 0) {
+        timeLeftDiv.innerHTML = getTime(secondsLeft);
+        clearInterval(intervalId);
+        alarm.play()
+        playing = false;
+        return;
+      } 
+      
       timeLeftDiv.innerHTML = getTime(secondsLeft);
     },1000)
-    
 
   } else {
-
     clearInterval(intervalId);
-    alarm.play()
-
   }
 
 }
