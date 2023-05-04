@@ -10831,6 +10831,9 @@ body {
 .container .row {
   width: 600px;
 }
+.container h1, .container .h1 {
+  color: #fff;
+}
 
 .label-container {
   display: flex;
@@ -10882,4 +10885,7 @@ body {
 .card {
   --bs-card-color:#ffffff !important;
   --bs-card-bg: rgba(255, 255, 255, 0.2);
+}
+.card .card-header {
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

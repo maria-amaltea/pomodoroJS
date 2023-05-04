@@ -6,6 +6,7 @@
 </head>
 <body>
 	<div class="container">
+    <h1 class="my-8">Pomodoro Clock</h1>
         <div class="row">
           <div class="col-md-6">
             <div class="card">
@@ -15,7 +16,7 @@
               <div class="card-body">
                 <div class="d-flex justify-content-center">
                   <button id="break-decrement" class="btn btn-outline-light mr-2">-</button>
-                  <span id="break-length" class="align-self-center">5</span>
+                  <span id="break-length" class="align-self-center px-2"></span>
                   <button id="break-increment" class="btn btn-outline-light ml-2">+</button>
                 </div>
               </div>
@@ -30,7 +31,7 @@
               <div class="card-body">
                 <div class="d-flex justify-content-center">
                   <button id="session-decrement" class="btn btn-outline-light mr-2">-</button>
-                  <span id="session-length" class="align-self-center">25</span>
+                  <span id="session-length" class="align-self-center  px-2"></span>
                   <button id="session-increment" class="btn btn-outline-light ml-2">+</button>
                 </div>
               </div>
@@ -46,7 +47,7 @@
               </div>
               <div class="card-body">
                 <div class="d-flex justify-content-center">
-                  <div id="time-left" class="align-self-center">25:00</div>
+                  <div id="time-left" class="align-self-center"></div>
                 </div>
               </div>
               <div class="card-footer">
@@ -59,6 +60,10 @@
           </div>
         </div>
       </div>
-    
+      <audio id="beep">
+        <source src="alarm.mp3" type="audio/mpeg">
+      </audio>
+    <script src="index.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>
