@@ -4,6 +4,7 @@ body {
 	background-color: var(--bs-teal);
 }
 
+
 .container {
 	display: flex;
 	flex-direction: column;
@@ -12,6 +13,10 @@ body {
 
 	.row {
 		width:600px;
+	}
+
+	h1{
+		color: #fff;
 	}
 }
 
@@ -68,4 +73,8 @@ body {
 	
 	--bs-card-color:#ffffff !important;
 	--bs-card-bg: rgba(255, 255, 255, 0.2);
+
+	.card-header {
+		color:#fff;
+	}
 }
